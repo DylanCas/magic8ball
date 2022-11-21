@@ -1,8 +1,29 @@
-var userName = 'Dylan'
+
+var userNameBtn = document.getElementById("userNameBtn")
+var askBtn = document.getElementById("askBtn")
+var questionScreenEl = document.getElementById("questionScreen")
 
 // presents welcoming whether or not user provides a userName value
-userName === '' ? console.log('Welcome, Stranger!') : console.log('Welcome, ' + userName + '!')
-const userQuestion = 'Does chicken tortilla soup sound like a good plan?'
+userNameBtn.addEventListener("click", function(){
+  var userName = document.getElementById("userName").value
+  var userGreetingEl = document.getElementById('userGreeting')
+  if (userName === '') {
+    userGreetingEl.textContent = 'Welcome, Stranger!'
+  } else {
+    userGreetingEl.textContent = 'Welcome, ' + userName + '!'
+  } 
+  userGreetingEl.style.display = "block"
+  questionScreenEl.style.display = "block"
+});
+
+// Offer input box to enter a question, and button to submit questions. Will display question on screen
+askBtn.addEventListener("click", function() {
+  var userName = document.getElementById("userName").value
+  var userQuestionBox = document.getElementById("questionBox").value
+  var userQuestionEl = document.getElementById("userQuestion")
+  userQuestionEl.textContent = userName + " asks: " + userQuestionBox
+  userQuestionEl.style.display = "block"
+})
 
 // Statement of user name as well as their question asked
 userName === '' ? console.log('Stranger asks: ' + userQuestion) : console.log(userName + ' asks: ' + userQuestion)
