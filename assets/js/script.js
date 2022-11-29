@@ -5,7 +5,7 @@ var questionScreenEl = document.getElementById("questionScreen")
 
 // presents welcoming whether or not user provides a userName value
 userNameBtn.addEventListener("click", function(){
-  var userName = document.getElementById("userName").value
+  let userName = document.getElementById("userName").value
   var userGreetingEl = document.getElementById('userGreeting')
   if (userName === '') {
     userGreetingEl.textContent = 'Welcome, Stranger!'
@@ -21,12 +21,14 @@ askBtn.addEventListener("click", function() {
   var userName = document.getElementById("userName").value
   var userQuestionBox = document.getElementById("questionBox").value
   var userQuestionEl = document.getElementById("userQuestion")
-  userQuestionEl.textContent = userName + " asks: " + userQuestionBox
+  // Statement of user name as well as their question asked
+  if (userName === "") {
+  userQuestionEl.textContent = "Stranger asks: " + userQuestionBox
+  } else {
+    userQuestionEl.textContent = userName + " asks: " + userQuestionBox
+  }
   userQuestionEl.style.display = "block"
 })
-
-// Statement of user name as well as their question asked
-userName === '' ? console.log('Stranger asks: ' + userQuestion) : console.log(userName + ' asks: ' + userQuestion)
 
 // generates random number to select answers
 var randomNumber = Math.floor(Math.random() * 8);
