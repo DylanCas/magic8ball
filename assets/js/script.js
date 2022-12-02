@@ -1,12 +1,12 @@
 
-var userNameBtn = document.getElementById("userNameBtn")
-var askBtn = document.getElementById("askBtn")
-var questionScreenEl = document.getElementById("questionScreen")
+const userNameBtn = document.getElementById("userNameBtn")
+const askBtn = document.getElementById("askBtn")
+const questionScreenEl = document.getElementById("questionScreen")
 
 // presents welcoming whether or not user provides a userName value
 userNameBtn.addEventListener("click", function(){
-  let userName = document.getElementById("userName").value
-  var userGreetingEl = document.getElementById('userGreeting')
+  const userName = document.getElementById("userName").value
+  const userGreetingEl = document.getElementById('userGreeting')
   if (userName === '') {
     userGreetingEl.textContent = 'Welcome, Stranger!'
   } else {
@@ -18,9 +18,9 @@ userNameBtn.addEventListener("click", function(){
 
 // Offer input box to enter a question, and button to submit questions. Will display question on screen
 askBtn.addEventListener("click", function() {
-  var userName = document.getElementById("userName").value
-  var userQuestionBox = document.getElementById("questionBox").value
-  var userQuestionEl = document.getElementById("userQuestion")
+  const userName = document.getElementById("userName").value
+  const userQuestionBox = document.getElementById("questionBox").value
+  const userQuestionEl = document.getElementById("userQuestion")
   // Statement of user name as well as their question asked
   if (userName === "") {
   userQuestionEl.textContent = "Stranger asks: " + userQuestionBox
@@ -31,9 +31,9 @@ askBtn.addEventListener("click", function() {
   // generates random number to select answers
 
 let answer = document.getElementById("questionAnswer")
-var randomNumber = Math.floor(Math.random() * 8);
+let randomNumber = Math.floor(Math.random() * 8);
 
-var eightBall = ""
+let eightBall = ""
 // Logs various answers based on result of the RNG
 switch (randomNumber) {
   case 0:
